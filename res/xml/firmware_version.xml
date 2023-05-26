@@ -21,6 +21,11 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!--ArbitrarilyTong logo-->
+    <Preference
+        android:layout="@layout/tong_android_version_banner"
+        android:key="tong_android_version_banner" />
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
