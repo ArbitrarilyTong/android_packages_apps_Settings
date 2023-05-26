@@ -11,7 +11,6 @@ import android.widget.*
 import com.android.settings.R
 
 import androidx.appcompat.app.AlertDialog
-import com.android.settings.Settings
 
 typealias onDeviceChanged = ((deviceName: String) -> Unit)?
 
@@ -27,18 +26,18 @@ class AboutDevice : FrameLayout {
         inflate(context, R.layout.device_info, this)
         // ROM Version
         val version = SystemProperties.get("ro.modversion")
-        // val type = SystemProperties.get("ro.dot.releasetype")
+        // val type = SystemProperties.get("ro.tong.releasetype")
 
-        //findViewById<TextView>(R.id.romVersion).text = (if (type == "GAPPS") {
-        //    version + " " + context.getString(R.string.about_device_version_type_gapps)
-        //} else {
-        //    version + " " + context.getString(R.string.about_device_version_type_vanilla)
-        //}).toString()
+        // findViewById<TextView>(R.id.romVersion).text = (if (type.contains("GAPPS")) {
+        //     version + " " + context.getString(R.string.about_device_version_type_gapps)
+        // } else {
+        //     version + " " + context.getString(R.string.about_device_version_type_vanilla)
+        // }).toString()
 
         // Device
         var mDeviceName = Settings.Global.getString(
-                context.contentResolver,
-                Settings.Global.DEVICE_NAME
+            context.contentResolver,
+            Settings.Global.DEVICE_NAME
         )
         if (mDeviceName == null) {
             mDeviceName = Build.MODEL
@@ -56,8 +55,8 @@ class AboutDevice : FrameLayout {
             alert.setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
             // Update device name before showing dialog
             mDeviceName = Settings.Global.getString(
-                    context.contentResolver,
-                    Settings.Global.DEVICE_NAME
+                context.contentResolver,
+                Settings.Global.DEVICE_NAME
             )
             if (mDeviceName == null) {
                 mDeviceName = Build.MODEL
