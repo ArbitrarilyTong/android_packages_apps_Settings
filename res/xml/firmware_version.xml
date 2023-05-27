@@ -22,7 +22,7 @@
     settings:keywords="@string/keywords_android_version">
 
     <!--ArbitrarilyTong logo-->
-    <Preference
+    <PreferenceScreen
         android:layout="@layout/tong_android_version_banner"
         android:key="tong_android_version_banner" />
 
