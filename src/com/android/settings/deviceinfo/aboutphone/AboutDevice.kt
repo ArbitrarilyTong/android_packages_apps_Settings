@@ -25,13 +25,13 @@ class AboutDevice : FrameLayout {
     init {
         inflate(context, R.layout.device_info, this)
         // ROM Version
-        val version = SystemProperties.get("ro.lineage.releasetype")
-        val type = SystemProperties.get("ro.lineage.version")
+        val releasetype = SystemProperties.get("ro.lineage.releasetype")
+        val version = SystemProperties.get("ro.lineage.version")
 
          findViewById<TextView>(R.id.romVersion).text = (if (type.contains("OFFICIAL")) {
-             version + " " + context.getString(R.string.about_device_version_type_OFFICIAL)
+             version + " " + releasetype
          } else {
-             version + " " + context.getString(R.string.about_device_version_type_UNOFFICIAL)
+             version + " " + releasetype
          }).toString()
 
         // Device
