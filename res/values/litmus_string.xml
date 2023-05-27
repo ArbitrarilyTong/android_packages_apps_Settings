@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, LitmusOS -->
+    <string name="litmusos_version">LitmusOS version</string>
+    <string name="litmusos_version_codename">Thalassa</string>
+    <string name="litmusos_android_version">Android 13</string>
+
+    <!-- About phone cards -->
+    <string name="about_device_nearby">The device name can and will be seen by the nearby devices.</string>
+    <string name="device_model">Device Model</string>
+    <string name="storage_1">total</string>
+    <string name="edit">Edit</string>
+    <string name="device_name">Device name</string>
+</resources>

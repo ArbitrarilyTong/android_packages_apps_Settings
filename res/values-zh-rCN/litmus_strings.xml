@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About phone cards -->
+    <string name="about_device_nearby">设备名将会被附近的设备查看</string>
+    <string name="device_model">设备型号</string>
+    <string name="storage_1">储存空间</string>
+    <string name="edit">编辑</string>
+    <string name="device_name">设备名</string>
+</resources>
