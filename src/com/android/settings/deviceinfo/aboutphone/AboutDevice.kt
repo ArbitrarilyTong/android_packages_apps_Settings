@@ -28,11 +28,7 @@ class AboutDevice : FrameLayout {
         val releasetype = SystemProperties.get("ro.lineage.releasetype")
         val version = SystemProperties.get("ro.lineage.version")
 
-         findViewById<TextView>(R.id.romVersion).text = (if (type.contains("OFFICIAL")) {
-             version + " " + releasetype
-         } else {
-             version + " " + releasetype
-         }).toString()
+         findViewById<TextView>(R.id.romVersion).text = (version + " " + releasetype).toString()
 
         // Device
         var mDeviceName = Settings.Global.getString(
