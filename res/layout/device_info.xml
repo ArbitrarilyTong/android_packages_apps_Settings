@@ -36,7 +36,7 @@ Copyright (C) The 2022 DotOS Project
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:orientation="horizontal">
-            >
+
 
             <ImageView
                 android:layout_width="300dp"
@@ -56,7 +56,7 @@ Copyright (C) The 2022 DotOS Project
             android:layout_gravity="bottom|center|right"
             android:layout_marginBottom="70dp"
             android:orientation="vertical">
-            >
+
 
             <ImageView
                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@ Copyright (C) The 2022 DotOS Project
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/tong_phone"
                 android:tint="?android:attr/textColorSecondary" />
 
@@ -149,7 +149,7 @@ Copyright (C) The 2022 DotOS Project
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/tong_android"
                 android:tint="?android:attr/textColorSecondary" />
 
