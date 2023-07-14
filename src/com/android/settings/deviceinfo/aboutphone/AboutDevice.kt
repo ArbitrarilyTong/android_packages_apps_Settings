@@ -12,11 +12,23 @@ import com.android.settings.R
 
 import androidx.appcompat.app.AlertDialog
 
+import android.app.usage.StorageStatsManager
+import android.os.storage.StorageManager
+import android.os.storage.VolumeInfo
+import android.text.format.Formatter
+import java.io.IOException
+import android.util.Log
+
 typealias onDeviceChanged = ((deviceName: String) -> Unit)?
 
 class AboutDevice : FrameLayout {
 
     private var listener: onDeviceChanged = null
+    private var freeBytes: Long = 0
+    private var usedBytes: Long = 0
+    private var totalBytes: Long = 0
+    var used: String? = null
+    var total: String? = null
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -24,6 +36,7 @@ class AboutDevice : FrameLayout {
 
     init {
         inflate(context, R.layout.device_info, this)
+        setStorageValue(manageStorageInfo())
         // ROM Version
         val version = SystemProperties.get("ro.lineage.version")
 
@@ -74,5 +87,33 @@ class AboutDevice : FrameLayout {
 
     fun setDeviceName(deviceName: String) {
         findViewById<TextView>(R.id.deviceName).text = deviceName
+    }
+    fun setStorageValue(storagevalue: String?){
+        findViewById<TextView>(R.id.storage_value).text = storagevalue
+    }
+    private fun manageStorageInfo(): String {
+        val storageManager: StorageManager? = context.getSystemService(StorageManager::class.java)
+        if (storageManager != null) {
+            val volumes = storageManager.volumes
+            for (vol in volumes) {
+                val path = vol.getPath()
+                if (vol.isMountedReadable) {
+                    if (vol.getType() == VolumeInfo.TYPE_PRIVATE) {
+                        val stats = context.getSystemService(StorageStatsManager::class.java)
+                        try {
+                            totalBytes = stats.getTotalBytes(vol.getFsUuid())
+                            freeBytes = stats.getFreeBytes(vol.getFsUuid())
+                            usedBytes = totalBytes - freeBytes
+                        } catch (e: IOException) {
+                            Log.w("StorageManager", e)
+                        }
+                    }
+                    used = Formatter.formatFileSize(context, usedBytes, Formatter.FLAG_SHORTER)
+                    total =
+                        Formatter.formatFileSize(context, totalBytes, Formatter.FLAG_SHORTER)
+                }
+            }
+        }
+        return used + String.format("/%s", total)
     }
 }

@@ -9,29 +9,34 @@
 
     <FrameLayout
         android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/tong_banner_shape"
         android:minHeight="150dp">
+
+        <ImageView
+            android:src="@drawable/tong_banner_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
 
         <LinearLayout
             android:id="@+id/small_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
-            android:orientation="horizontal">
-            >
+            android:orientation="horizontal" >
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
                 android:layout_marginLeft="225dp"
-                android:layout_marginBottom="135dp"
+                android:layout_marginBottom="210dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/arbitrarilytong_logo" />
 
@@ -44,18 +49,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_gravity="bottom|center|center_horizontal"
-            android:orientation="vertical">
-            >
-
-            <ImageView
-                android:layout_width="373dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|clip_horizontal|center"
-                android:layout_marginTop="85dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/tong_banner_shape3" />
-
-        </LinearLayout>
+            android:orientation="vertical"/>
 
     </FrameLayout>
 

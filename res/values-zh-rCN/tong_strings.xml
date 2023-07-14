@@ -50,11 +50,10 @@
 
     <!-- About phone cards -->
     <string name="about_device_nearby">设备名将会被附近的设备查看</string>
-    <string name="about_device_version_type_official">OFFICIAL</string>
-    <string name="about_device_version_type_unofficial">UNOFFICIAL</string>
     <string name="version">版本号</string>
     <string name="edit">编辑</string>
     <string name="device_name">设备名</string>
+    <string name="storage_title">存储空间</string>
 
     <!-- SELinux Status -->
     <string name="selinux_status">SELinux status</string>
